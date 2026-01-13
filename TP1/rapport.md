@@ -188,3 +188,100 @@ Les tokens proposés sont plausibles et cohérents avec le préfixe donné. On o
 ```
 ---
 ## Exercice 5: Exploration des méthodes de génération avec GPT-2
+### Question 5-a:
+**Seed utilisé** : 42.
+```
+On fixe un seed pour rendre la génération reproductible lorsque des opérations aléatoires interviennent (ex : sampling). Cela permet de refaire les mêmes expériences et de comparer équitablement l’effet des paramètres.
+```
+### Question 5-b:
+**Texte généré** :
+```
+The future of artificial intelligence is uncertain.
+
+"We're not sure what the future will look like," said Dr. Michael S. Schoenfeld, a professor of computer science at the University of California, Berkeley. "But we're not
+```
+**Relance 3 fois** :
+En relançant la génération plusieurs fois avec le même prompt, on obtient exactement le même texte. Le décodage glouton (greedy) est déterministe : à chaque étape, le modèle sélectionne systématiquement le token le plus probable. Il n’y a donc aucune source d’aléa, et le seed n’influence pas le résultat.
+
+![alt text](img/image-11.png)
+
+### Question 5-c:
+![alt text](img/image-12.png)
+
+**2 sorties différentes** :
+```
+SEED 1
+The future of artificial intelligence is up in the air, and the future of artificial intelligence is now about to change. For now, we're just waiting for the technology to be perfected so that we can take it to the next level.
+
+The
+
+SEED 2
+The future of artificial intelligence is not clear, but that could change. The early progress of AI has been largely due to the ability to do some things fairly quickly, like calculate things, but the future is not clear. The early progress of AI has
+```
+
+**Comparaison et Explication** :
+Par rapport au greedy (déterministe et très “probable”), le sampling produit des sorties différentes selon le seed : on observe plus de diversité dans le contenu et le style (ex : ton “interview”, ton “article”, etc.). Le greedy suit une continuation très probable et souvent générique, alors que le sampling explore plusieurs suites plausibles. On remarque aussi que le sampling peut introduire des répétitions (“bright and bright”, “future of the future”), surtout quand un motif a une probabilité non négligeable. 
+
+La température (0.7) rend la distribution plus pointue donc plus cohérente que temp=1.0. 
+
+Le top-k=50 limite le choix aux 50 tokens les plus probables.
+
+Le top-p=0.95 limite le choix au plus petit ensemble de tokens cumulant 95% de la probabilité.
+
+### Question 5-d:
+![alt text](img/image-13.png)
+
+**Sortie**:
+```
+Sans pénalité:
+The future of artificial intelligence is bright and bright. The future of the Internet of Things, and the future of the future of the Internet of Things industry.
+
+The future of the Internet of Things, and the future of the Internet of Things industry
+
+Avec pénalité:
+The future of artificial intelligence is bright and exciting. We need a way to capture that information, but it has been very challenging for us," said James Pritchard from the University's Centre on Artificial Intelligence (CAI), who was not involved in
+```
+**Commentaire** :
+Avec une pénalité de répétition élevée, les répétitions explicites de mots ou de groupes de mots disparaissent presque entièrement. Le texte généré devient plus varié et progresse davantage au lieu de recycler les mêmes motifs. En contrepartie, on observe parfois un changement de style ou de contenu. La pénalité de répétition est donc efficace pour réduire les boucles, mais peut légèrement affecter la cohérence globale.
+
+### Question 5-e:
+![alt text](img/image-14.png)
+
+**Sortie** :
+```
+Température basse (0.1):
+The future of artificial intelligence is uncertain, but it is clear that it will be a big part of the future of the human race.
+
+The future of artificial intelligence is uncertain, but it is clear that it will be a big part of the
+
+Température élevée (2.0):
+The future of artificial intelligence is not something that will define it or how and when society uses AI at every step of your job," Musk revealed Sunday on Time Out Europe with Daniel Zaizner.
+"Our main takeaway is very slowly we will hit
+```
+**Explication** :
+Avec une température très basse (0.1), la distribution des probabilités est fortement concentrée sur les tokens les plus probables. La génération devient donc très conservatrice, cohérente et proche du greedy, mais peu créative et parfois redondante. À l’inverse, une température élevée (2.0) aplatit la distribution, ce qui augmente fortement la diversité des tokens tirés. Le texte devient plus original et imprévisible, mais aussi moins contrôlé et parfois moins cohérent. La température permet ainsi d’ajuster le compromis entre stabilité linguistique et créativité.
+
+### Question 5-f:
+**Sortie** :
+![alt text](img/image-15.png)
+
+**Comparaison** :
+La génération par beam search produit un texte très cohérent et globalement plus probable que le sampling. En explorant plusieurs hypothèses en parallèle, le modèle sélectionne la séquence ayant la probabilité totale maximale. Le résultat est souvent fluide et bien structuré, mais aussi plus générique et moins divers. On observe parfois des répétitions, car le beam search favorise des chemins très probables plutôt que l’exploration créative.
+
+### Question 5-g:
+![alt text](img/image-16.png)
+
+**Temps mesurés et paramètres** :
+```
+num_beams=5
+Temps de génération: 3.501 secondes
+
+num_beams=10
+Temps de génération: 4.069 secondes
+
+num_beams=20
+Temps de génération: 5.870 secondes
+```
+
+**Explication** :
+On observe que le temps de génération augmente avec le nombre de beams. Le beam search conserve et explore plusieurs hypothèses de génération en parallèle à chaque pas de temps. Lorsque num_beams augmente, le modèle doit évaluer davantage de séquences candidates, ce qui accroît le coût computationnel. Au-delà d’un certain nombre de beams, le gain qualitatif est faible tandis que le temps de calcul augmente fortement, ce qui rend les grands nombres de beams peu efficaces en pratique.
