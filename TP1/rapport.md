@@ -120,7 +120,7 @@ Les encodages positionnels sont des vecteurs de dimension 768, impossibles à vi
 
 ### Question 3-c:
 **Capture d’écran du nuage de points** :
-![alt text](image.png)
+![alt text](img/image-5.png)
 
 **Comparaison** :
 Pour les positions 0 à 50, la projection PCA montre une trajectoire relativement compacte et facile à suivre. Lorsque l’on étend l’analyse aux positions 0 à 200, la structure devient beaucoup plus large et prend la forme d’une courbe presque circulaire. L’ordre des positions reste globalement respecté, mais la lisibilité locale diminue à mesure que l’échelle augmente. Les points sont davantage dispersés, ce qui rend les relations entre positions éloignées plus difficiles à interpréter visuellement.
@@ -130,6 +130,61 @@ Cette visualisation suggère que GPT-2 encode la position de manière continue e
 
 ---
 ## Exercice 4: Probabilités et génération de texte avec GPT-2
+### Question 4-a:
+![alt text](img/image-6.png)
 
+**Sortie** :
+```
+1 'ificial' 1.920e-05
+2 ' intelligence' 1.505e-01
+3 ' is' 1.955e-01
+4 ' fascinating' 6.504e-04
+5 '.' 1.773e-01
+```
+
+**Exlication** :
+```
+GPT-2 est un modèle causal : à la position i, il prédit le token suivant.
+logits[0, i, :] correspond donc à la distribution de P(token_{i+1} | tokens_{<=i}).
+Dans la boucle, quand on veut la proba du token observé à l’index t, on doit regarder les logits à t-1.
+C’est pour ça qu’on lit probs[0, t-1, tok_id].
+```
+### Question 4-b:
+![alt text](img/image-7.png)
+
+**log-proba totale** = -23.454867601394653 
+**perplexité** = 108.95920218447814 
+
+**Explication** :
+```
+La perplexité mesure à quel point un modèle est surpris par une séquence de tokens. Elle correspond à l’exponentielle de la moyenne des log-probabilités négatives des tokens. Intuitivement, une perplexité faible indique que le modèle attribue des probabilités élevées aux tokens observés, tandis qu’une perplexité élevée signifie que la phrase est peu probable selon le modèle. Plus la phrase est naturelle et conforme aux données d’entraînement, plus la perplexité est faible.
+```
+### Question 4-c:
+![alt text](img/image-8.png)
+
+**"Artificial intelligence is fascinating."** : **perplexité** = 108.95920218447814
+
+**"Artificial fascinating intelligence is."** : **perplexité** = 4595.932229104395
+
+**Commentaire et Explication** :
+```
+La phrase grammaticalement correcte présente une perplexité très inférieure à celle de la phrase dont l’ordre des mots est incorrect. Cela montre que GPT-2 attribue des probabilités bien plus élevées aux séquences respectant les régularités syntaxiques et statistiques de l’anglais. La phrase mal ordonnée viole les structures fréquemment observées dans les données d’entraînement, ce qui surprend fortement le modèle et entraîne une explosion de la perplexité. Cette expérience illustre que GPT-2 a appris implicitement des notions de grammaticalité à partir des distributions de cooccurrence des tokens.
+```
+### Question 4-d:
+![alt text](img/image-9.png)
+
+**"L'intelligence artificielle est fascinante."** : **perplexité** = 383.0421852214097
+
+**Explication** :
+```
+La phrase française présente une perplexité plus élevée que la phrase anglaise correcte, mais bien inférieure à celle de la phrase anglaise mal ordonnée. Cela s’explique par le fait que GPT-2 a été entraîné majoritairement sur des corpus anglophones, ce qui pénalise les séquences en français. Néanmoins, la structure grammaticale cohérente de la phrase française permet au modèle de mieux la prédire qu’une phrase anglaise syntaxiquement incorrecte. Cette observation montre que GPT-2 capture des régularités syntaxiques générales, même dans une langue moins représentée.
+```
+### Question 4-e:
+![alt text](img/image-10.png)
+
+**Commentaire** :
+```
+Les tokens proposés sont plausibles et cohérents avec le préfixe donné. On observe principalement des mots fréquents précédés d’un espace, ce qui est caractéristique de la tokenisation GPT-2. Le modèle propose des continuations génériques comme des articles, des adverbes ou des verbes, indiquant qu’il anticipe une suite grammaticale valide plutôt qu’un mot très spécifique. La distribution des probabilités reflète les régularités statistiques apprises lors de l’entraînement.
+```
 ---
 ## Exercice 5: Exploration des méthodes de génération avec GPT-2
