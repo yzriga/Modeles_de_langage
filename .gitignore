@@ -4,3 +4,8 @@
 # Python cache
 __pycache__/
 *.pyc
+# model weights
+TP2/gpt2_weights/
+*.ckpt
+*.ckpt.*
+
