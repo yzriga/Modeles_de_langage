@@ -8,3 +8,4 @@ __pycache__/
 TP2/gpt2_weights/
 *.ckpt
 *.ckpt.*
+TP3/gpt2_weights/
