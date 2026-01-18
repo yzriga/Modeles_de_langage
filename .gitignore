@@ -4,8 +4,15 @@
 # Python cache
 __pycache__/
 *.pyc
+
 # model weights
 TP2/gpt2_weights/
 *.ckpt
 *.ckpt.*
 TP3/gpt2_weights/
+
+# TP4 - données locales
+TP4/data/admin_pdfs/
+TP4/data/emails/
+TP4/data/cache/
+TP4/chroma_db/

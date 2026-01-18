@@ -1,0 +1,14 @@
+[
+    {"id":"q1","question":"Quels sont les sujets de PFE supplémentaires proposés par Luca Benedetto ?","expected_doc_type":"email"},
+    {"id":"q2","question":"Comment valider une UE ?","expected_doc_type":"admin_pdf"},
+    {"id":"q3","question":"Quel était le lien et l’horaire du cours passé en distanciel le 07 janvier 2026 ?","expected_doc_type":"email"},
+    {"id":"q4","question":"Quelles sont les règles de validation des UE (note finale, moyenne pondérée) ?","expected_doc_type":"admin_pdf"},
+    {"id":"q5","question":"Que se passe-t-il lorsqu’une UE n’est pas validée (quelles options) ?","expected_doc_type":"admin_pdf"},
+    {"id":"q6","question":"Quel email parle de la description et du planning du PFE ?","expected_doc_type":"email"},
+    {"id":"q7","question":"Comment sont attribués les crédits ECTS en cas de non-validation d’une UE ?","expected_doc_type":"admin_pdf"},
+    {"id":"q8","question":"Qui a envoyé l’email annonçant le cours en distanciel (nom + rôle) ?","expected_doc_type":"email"},
+    {"id":"q9","question":"Quelles informations sont données sur les commissions/procédures dans le règlement intérieur ?","expected_doc_type":"admin_pdf"},
+    {"id":"q10","question":"Y a-t-il un email qui mentionne une bourse Erasmus (et de quel parcours) ?","expected_doc_type":"email"},
+    {"id":"q11","question":"Quels sont exactement les sujets listés dans l’email 'PFE: Sujets additionnels' ?","expected_doc_type":"email"},
+    {"id":"q12","question":"Comment est calculée la note finale d’une UE (pondération, coefficients) ?","expected_doc_type":"admin_pdf"}
+  ]
