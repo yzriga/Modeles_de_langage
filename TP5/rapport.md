@@ -58,5 +58,5 @@ Le jeu de test couvre les 4 intents principaux (reply, ask_clarification, escala
 ---
 ## Exercice 11: Évaluation pragmatique : exécuter 8–12 emails, produire un tableau de résultats et un extrait de trajectoires
 
---
+---
 ## Exercice 12: Rédaction finale du rapport (1–2 pages) : synthèse, preuves, et réflexion courte
