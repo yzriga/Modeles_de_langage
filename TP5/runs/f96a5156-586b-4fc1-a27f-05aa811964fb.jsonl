@@ -1,0 +1,7 @@
+{"run_id": "f96a5156-586b-4fc1-a27f-05aa811964fb", "ts": "2026-01-28T13:12:10.900847Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "f96a5156-586b-4fc1-a27f-05aa811964fb", "ts": "2026-01-28T13:12:16.118746Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité", "rationale": "Requête d'attestation de scolarité nécessitant consultation du règlement."}}}
+{"run_id": "f96a5156-586b-4fc1-a27f-05aa811964fb", "ts": "2026-01-28T13:12:16.123474Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "f96a5156-586b-4fc1-a27f-05aa811964fb", "ts": "2026-01-28T13:12:18.394156Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "c82a85d6851e", "latency_ms": 2269, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "f96a5156-586b-4fc1-a27f-05aa811964fb", "ts": "2026-01-28T13:12:18.397037Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "f96a5156-586b-4fc1-a27f-05aa811964fb", "ts": "2026-01-28T13:12:18.398661Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "f96a5156-586b-4fc1-a27f-05aa811964fb", "ts": "2026-01-28T13:12:18.398966Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

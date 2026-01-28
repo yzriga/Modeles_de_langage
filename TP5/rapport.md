@@ -40,7 +40,7 @@ Le jeu de test couvre les 4 intents principaux (reply, ask_clarification, escala
 ![alt text](img/image-10.png)
 ---
 ## Exercice 6: Tool use : intégrer votre RAG comme outil (retrieval + evidence)
-
+![alt text](img/image-11.png)
 ---
 ## Exercice 7: Génération : rédiger une réponse institutionnelle avec citations (remplacer le stub reply)
 

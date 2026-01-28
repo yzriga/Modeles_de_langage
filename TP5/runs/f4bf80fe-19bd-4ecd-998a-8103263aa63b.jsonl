@@ -1,0 +1,7 @@
+{"run_id": "f4bf80fe-19bd-4ecd-998a-8103263aa63b", "ts": "2026-01-28T13:14:45.915618Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E03"}}
+{"run_id": "f4bf80fe-19bd-4ecd-998a-8103263aa63b", "ts": "2026-01-28T13:14:49.333253Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "verification disponibilité sujets PFE - Luca Benedetto", "rationale": "Demande de confirmation sur la disponibilité des sujets de PFE proposés par Luca Benedetto."}}}
+{"run_id": "f4bf80fe-19bd-4ecd-998a-8103263aa63b", "ts": "2026-01-28T13:14:49.337419Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "f4bf80fe-19bd-4ecd-998a-8103263aa63b", "ts": "2026-01-28T13:14:50.422212Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "b40af6227efe", "latency_ms": 1084, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "f4bf80fe-19bd-4ecd-998a-8103263aa63b", "ts": "2026-01-28T13:14:50.424020Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "f4bf80fe-19bd-4ecd-998a-8103263aa63b", "ts": "2026-01-28T13:14:50.424775Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "f4bf80fe-19bd-4ecd-998a-8103263aa63b", "ts": "2026-01-28T13:14:50.424900Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

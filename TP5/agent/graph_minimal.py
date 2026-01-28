@@ -4,6 +4,7 @@ from langgraph.graph import StateGraph, END
 from TP5.agent.state import AgentState
 from TP5.agent.routing import route
 from TP5.agent.nodes.classify_email import classify_email
+from TP5.agent.nodes.maybe_retrieve import maybe_retrieve
 from TP5.agent.nodes.stubs import (
     stub_reply,
     stub_ask_clarification,
@@ -16,6 +17,7 @@ def build_graph():
     g = StateGraph(AgentState)
 
     g.add_node("classify_email", classify_email)
+    g.add_node("maybe_retrieve", maybe_retrieve)
     g.add_node("reply", stub_reply)
     g.add_node("ask_clarification", stub_ask_clarification)
     g.add_node("escalate", stub_escalate)
@@ -28,12 +30,15 @@ def build_graph():
         "classify_email",
         route,
         {
-            "reply": "reply",
+            "reply": "maybe_retrieve",
             "ask_clarification": "ask_clarification",
             "escalate": "escalate",
             "ignore": "ignore",
         },
     )
+
+    # relier maybe_retrieve au stub reply
+    g.add_edge("maybe_retrieve", "reply")
 
     # TODO: chaque branche termine le graphe
     g.add_edge("reply", END)
