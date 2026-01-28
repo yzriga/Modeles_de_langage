@@ -1,0 +1,2 @@
+{"run_id": "31fc40ab-2dea-4079-a31b-a4d419340dc9", "ts": "2026-01-28T14:14:50.562218Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "31fc40ab-2dea-4079-a31b-a4d419340dc9", "ts": "2026-01-28T14:14:50.562385Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}

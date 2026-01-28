@@ -1,0 +1,7 @@
+{"run_id": "d0b6444a-a153-4501-8466-1ad05232fac4", "ts": "2026-01-28T14:10:23.140809Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "d0b6444a-a153-4501-8466-1ad05232fac4", "ts": "2026-01-28T14:10:27.959268Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité", "rationale": "Question administrative nécessitant consultation du corpus."}}}
+{"run_id": "d0b6444a-a153-4501-8466-1ad05232fac4", "ts": "2026-01-28T14:10:27.962871Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "d0b6444a-a153-4501-8466-1ad05232fac4", "ts": "2026-01-28T14:10:30.087519Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "c82a85d6851e", "latency_ms": 2124, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "d0b6444a-a153-4501-8466-1ad05232fac4", "ts": "2026-01-28T14:10:30.088439Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "d0b6444a-a153-4501-8466-1ad05232fac4", "ts": "2026-01-28T14:10:30.088975Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "d0b6444a-a153-4501-8466-1ad05232fac4", "ts": "2026-01-28T14:10:34.549528Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}

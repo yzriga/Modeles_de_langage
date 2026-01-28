@@ -7,7 +7,7 @@ from TP5.agent.graph_minimal import build_graph
 
 if __name__ == "__main__":
     emails = load_all_emails()
-    e = emails[0]  # E01 pour cohérence avec la documentation
+    e = emails[0]  # E01 - test principal
 
     state = AgentState(
         run_id=str(uuid.uuid4()),
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         print(f"  Snippet: {evidence.snippet[:100]}...")
         print(f"  Score: {evidence.score}")
     print("\n=== RETRIEVAL_SPEC ===")
-    if out["retrieval_spec"]:
+    if "retrieval_spec" in out and out["retrieval_spec"]:
         print(f"Query: {out['retrieval_spec'].query}")
         print(f"K: {out['retrieval_spec'].k}")
     else:

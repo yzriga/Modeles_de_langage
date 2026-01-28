@@ -1,0 +1,7 @@
+{"run_id": "6e7a8cb1-6eee-46c8-8abb-a9faceabeea6", "ts": "2026-01-28T14:14:19.371048Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "6e7a8cb1-6eee-46c8-8abb-a9faceabeea6", "ts": "2026-01-28T14:14:22.707462Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "verification de l'offre promue par Marketing pour le site commercial (www.arnaque-evidente.com)", "rationale": "E-mail promouvant une offre suspecte."}}}
+{"run_id": "6e7a8cb1-6eee-46c8-8abb-a9faceabeea6", "ts": "2026-01-28T14:14:22.711728Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "6e7a8cb1-6eee-46c8-8abb-a9faceabeea6", "ts": "2026-01-28T14:14:23.868375Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "a9d0883b3f19", "latency_ms": 1156, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "6e7a8cb1-6eee-46c8-8abb-a9faceabeea6", "ts": "2026-01-28T14:14:23.869291Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "6e7a8cb1-6eee-46c8-8abb-a9faceabeea6", "ts": "2026-01-28T14:14:23.869789Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "6e7a8cb1-6eee-46c8-8abb-a9faceabeea6", "ts": "2026-01-28T14:14:28.546880Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}

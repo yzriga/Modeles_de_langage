@@ -5,8 +5,8 @@ from TP5.agent.state import AgentState
 from TP5.agent.routing import route
 from TP5.agent.nodes.classify_email import classify_email
 from TP5.agent.nodes.maybe_retrieve import maybe_retrieve
+from TP5.agent.nodes.draft_reply import draft_reply
 from TP5.agent.nodes.stubs import (
-    stub_reply,
     stub_ask_clarification,
     stub_escalate,
     stub_ignore,
@@ -18,7 +18,7 @@ def build_graph():
 
     g.add_node("classify_email", classify_email)
     g.add_node("maybe_retrieve", maybe_retrieve)
-    g.add_node("reply", stub_reply)
+    g.add_node("reply", draft_reply)
     g.add_node("ask_clarification", stub_ask_clarification)
     g.add_node("escalate", stub_escalate)
     g.add_node("ignore", stub_ignore)

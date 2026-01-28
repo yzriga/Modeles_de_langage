@@ -1,0 +1,4 @@
+{"run_id": "f05a03ae-4b42-4dcf-9ff5-2d1d8510ff9d", "ts": "2026-01-28T14:13:29.352517Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "f05a03ae-4b42-4dcf-9ff5-2d1d8510ff9d", "ts": "2026-01-28T14:13:31.906156Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "escalate", "category": "admin", "priority": 2, "risk_level": "high", "needs_retrieval": false, "retrieval_query": "", "rationale": "Email possible phishing avec un lien suspect"}}}
+{"run_id": "f05a03ae-4b42-4dcf-9ff5-2d1d8510ff9d", "ts": "2026-01-28T14:13:31.910176Z", "event": "node_start", "data": {"node": "stub_escalate"}}
+{"run_id": "f05a03ae-4b42-4dcf-9ff5-2d1d8510ff9d", "ts": "2026-01-28T14:13:31.910658Z", "event": "node_end", "data": {"node": "stub_escalate", "status": "ok"}}
