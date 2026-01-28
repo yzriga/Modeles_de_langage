@@ -23,4 +23,38 @@ Le jeu de test couvre les 4 intents principaux (reply, ask_clarification, escala
 ![alt text](img/image-3.png)
 ---
 ## Exercice 3: Implémenter le State typé (Pydantic) et un logger JSONL (run events)
+![alt text](img/image-4.png)
 
+![alt text](img/image-5.png)
+
+![alt text](img/image-6.png)
+---
+## Exercice 4: Router LLM : produire une Decision JSON validée (avec fallback/repair)
+![alt text](img/image-7.png)
+---
+## Exercice 5: LangGraph : routing déterministe et graphe minimal (MVP)
+![alt text](img/image-8.png)
+
+![alt text](img/image-9.png)
+
+![alt text](img/image-10.png)
+---
+## Exercice 6: Tool use : intégrer votre RAG comme outil (retrieval + evidence)
+
+---
+## Exercice 7: Génération : rédiger une réponse institutionnelle avec citations (remplacer le stub reply)
+
+---
+## Exercice 8: Boucle contrôlée : réécriture de requête et 2e tentative de retrieval (max 2)
+
+---
+## Exercice 9: Finalize + Escalade (mock) : sortie propre, actionnable, et traçable
+
+---
+## Exercice 10: Robustesse & sécurité : budgets, allow-list tools, et cas “prompt injection”
+
+---
+## Exercice 11: Évaluation pragmatique : exécuter 8–12 emails, produire un tableau de résultats et un extrait de trajectoires
+
+--
+## Exercice 12: Rédaction finale du rapport (1–2 pages) : synthèse, preuves, et réflexion courte

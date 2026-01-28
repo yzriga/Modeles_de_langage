@@ -1,0 +1,4 @@
+{"run_id": "16829454-896f-4f44-9bbd-0722eb3a1c84", "ts": "2026-01-28T12:20:58.938148Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "16829454-896f-4f44-9bbd-0722eb3a1c84", "ts": "2026-01-28T12:21:03.326731Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité", "rationale": "Requête administrative demandant une attestation de scolarité."}}}
+{"run_id": "16829454-896f-4f44-9bbd-0722eb3a1c84", "ts": "2026-01-28T12:21:03.330269Z", "event": "node_start", "data": {"node": "stub_reply"}}
+{"run_id": "16829454-896f-4f44-9bbd-0722eb3a1c84", "ts": "2026-01-28T12:21:03.330763Z", "event": "node_end", "data": {"node": "stub_reply", "status": "ok"}}

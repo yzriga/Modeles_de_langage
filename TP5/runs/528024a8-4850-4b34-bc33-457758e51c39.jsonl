@@ -1,0 +1,2 @@
+{"run_id": "528024a8-4850-4b34-bc33-457758e51c39", "ts": "2026-01-28T11:56:33.639551Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "528024a8-4850-4b34-bc33-457758e51c39", "ts": "2026-01-28T11:56:36.165480Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité", "rationale": "Question administrative nécessitant consultation du corpus."}}}
