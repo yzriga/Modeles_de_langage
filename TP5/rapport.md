@@ -128,7 +128,9 @@ python -m TP5.run_batch
 # Vérification des outils RAG
 python TP5/test_rag_allowlist.py
 ```
+![alt text](img/image-26.png)
 
+![alt text](img/image-27.png)
 **Preuves d'exécution** :
 - ![Terminal Output Batch](img/batch_terminal_output.txt) - Évaluation sur 11 emails
 - ![Run E09 Injection](img/run_e09_injection.txt) - Escalade automatique détectée
