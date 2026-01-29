@@ -1,4 +1,4 @@
-# TP5/test_router.py - Test pour forcer un cas difficile
+# TP5/test_loop_forced.py - Forcer la boucle en simulant citations invalides
 import uuid
 
 from TP5.load_test_emails import load_all_emails
@@ -7,8 +7,7 @@ from TP5.agent.graph_minimal import build_graph
 
 if __name__ == "__main__":
     emails = load_all_emails()
-    # Utilisons E04 - email ambigu qui pourrait être plus difficile
-    e = emails[3]  # E04 - "problème avec le truc"
+    e = emails[8]  # E09 - tentative prompt injection (plus complexe)
 
     state = AgentState(
         run_id=str(uuid.uuid4()),
@@ -20,7 +19,7 @@ if __name__ == "__main__":
 
     print(f"=== TESTING EMAIL {e['email_id']} ===")
     print(f"Subject: {e['subject']}")
-    print(f"Body: {e['body'][:100]}...")
+    print(f"Body: {e['body'][:150]}...")
 
     app = build_graph()
     out = app.invoke(state)
@@ -29,6 +28,14 @@ if __name__ == "__main__":
     print(f"Decision intent: {out['decision'].intent}")
     print(f"Retrieval attempts: {out['budget'].retrieval_attempts}")
     print(f"Evidence count: {len(out['evidence'])}")
-    print(f"Evidence OK: {out['evidence_ok']}")
-    print(f"Last draft had valid citations: {out['last_draft_had_valid_citations']}")
-    print(f"Draft: {out['draft_v1'][:200]}...")
+    print(f"Evidence OK: {out.get('evidence_ok', 'N/A')}")
+    print(f"Last draft had valid citations: {out.get('last_draft_had_valid_citations', 'N/A')}")
+    print(f"Final query: {out['decision'].retrieval_query}")
+    
+    if out['draft_v1']:
+        print(f"Draft: {out['draft_v1'][:200]}...")
+    else:
+        print("No draft generated")
+        
+    print(f"Actions: {len(out['actions'])} actions")
+    print(f"Errors: {len(out['errors'])} errors")

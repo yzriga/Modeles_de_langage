@@ -1,0 +1,11 @@
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:23.455987Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E06"}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:26.984474Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité - cour du 07/01, cours de Clara Lamotte", "rationale": "Question administrative nécessitant consultation du corpus pour retrouver les informations manquantes."}}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:26.987418Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:28.052524Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "e4238da4fa22", "latency_ms": 1064, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:28.056273Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:28.058343Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:35.532960Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:35.535289Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:35.535732Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:35.538400Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "88908a91-6e8e-47ed-9105-361d488537b3", "ts": "2026-01-28T23:56:35.539054Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

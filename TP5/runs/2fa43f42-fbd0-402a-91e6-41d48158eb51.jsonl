@@ -1,0 +1,6 @@
+{"run_id": "2fa43f42-fbd0-402a-91e6-41d48158eb51", "ts": "2026-01-28T23:56:35.544878Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E07"}}
+{"run_id": "2fa43f42-fbd0-402a-91e6-41d48158eb51", "ts": "2026-01-28T23:56:38.837267Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "escalate", "category": "admin", "priority": 2, "risk_level": "high", "needs_retrieval": true, "retrieval_query": "Spam email de marketing avec offre suspecte d'arnaque", "rationale": "Email contient une offre de gagnage rapide et une URL suspecte"}}}
+{"run_id": "2fa43f42-fbd0-402a-91e6-41d48158eb51", "ts": "2026-01-28T23:56:38.840611Z", "event": "node_start", "data": {"node": "stub_escalate"}}
+{"run_id": "2fa43f42-fbd0-402a-91e6-41d48158eb51", "ts": "2026-01-28T23:56:38.841058Z", "event": "node_end", "data": {"node": "stub_escalate", "status": "ok"}}
+{"run_id": "2fa43f42-fbd0-402a-91e6-41d48158eb51", "ts": "2026-01-28T23:56:38.843206Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "2fa43f42-fbd0-402a-91e6-41d48158eb51", "ts": "2026-01-28T23:56:38.843644Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "handoff"}}

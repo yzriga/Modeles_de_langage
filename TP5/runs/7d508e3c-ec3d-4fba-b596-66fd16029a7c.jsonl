@@ -1,0 +1,11 @@
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:06.820051Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E08"}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:10.118480Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité FISA Erasmus", "rationale": "Question administrative concernant les bourses Erasmus pour les étudiants FISA."}}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:10.121378Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:11.035592Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "0288a144c020", "latency_ms": 913, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:11.037171Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:11.038023Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:16.150217Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:16.152292Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:16.152648Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:16.154962Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "7d508e3c-ec3d-4fba-b596-66fd16029a7c", "ts": "2026-01-28T23:54:16.155390Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

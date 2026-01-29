@@ -1,0 +1,11 @@
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:13.130665Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E05"}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:16.949914Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité - liste des notes de la promotion de Yahia Zriga", "rationale": "La demande porte sur une question administrative qui nécessite consultation du corpus pour répondre à une étude statistique personnelle."}}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:16.952758Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:17.694555Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "b8c3c63f4870", "latency_ms": 741, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:17.698404Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:17.700498Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:23.443967Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:23.447252Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:23.447840Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:23.451300Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "ba3d9535-1b6d-4156-b411-791d77bb7528", "ts": "2026-01-28T23:56:23.452001Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

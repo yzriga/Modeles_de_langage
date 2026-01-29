@@ -1,0 +1,1 @@
+{"run_id": "test_run_2", "ts": "2026-01-28T23:36:43.330420Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "812c5f26b8bd", "latency_ms": 0, "status": "error", "error": "invalid_args"}}

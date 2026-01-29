@@ -61,7 +61,15 @@ def call_llm(prompt: str) -> str:
 def draft_reply(state: AgentState) -> AgentState:
     log_event(state.run_id, "node_start", {"node": "draft_reply"})
 
+    # Budget step check
+    if not state.budget.can_step():
+        log_event(state.run_id, "node_end", {"node": "draft_reply", "status": "budget_exceeded"})
+        return state
+
+    state.budget.steps_used += 1
+
     if not state.evidence and state.decision.needs_retrieval:
+        state.last_draft_had_valid_citations = False
         state.draft_v1 = safe_mode_reply(state, "no_evidence")
         log_event(state.run_id, "node_end", {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"})
         return state
@@ -76,16 +84,19 @@ def draft_reply(state: AgentState) -> AgentState:
         citations = data.get("citations", [])
     except Exception as e:
         state.add_error(f"draft_reply json parse error: {e}")
+        state.last_draft_had_valid_citations = False
         state.draft_v1 = safe_mode_reply(state, "invalid_json")
         log_event(state.run_id, "node_end", {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_json"})
         return state
 
     valid_ids = {d.doc_id for d in state.evidence}
     if (not citations or any(c not in valid_ids for c in citations)) and state.decision.needs_retrieval:
+        state.last_draft_had_valid_citations = False
         state.draft_v1 = safe_mode_reply(state, "invalid_citations")
         log_event(state.run_id, "node_end", {"node": "draft_reply", "status": "safe_mode", "reason": "invalid_citations"})
         return state
 
     state.draft_v1 = reply_text
+    state.last_draft_had_valid_citations = True
     log_event(state.run_id, "node_end", {"node": "draft_reply", "status": "ok", "n_citations": len(citations)})
     return state

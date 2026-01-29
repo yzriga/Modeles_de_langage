@@ -1,0 +1,2 @@
+{"run_id": "b2cc210e-3c89-4c2d-86a1-e4c927fa89bb", "ts": "2026-01-28T23:03:53.488861Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "b2cc210e-3c89-4c2d-86a1-e4c927fa89bb", "ts": "2026-01-28T23:03:53.488944Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "clarification"}}

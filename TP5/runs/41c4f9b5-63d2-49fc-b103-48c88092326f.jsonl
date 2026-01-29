@@ -1,0 +1,6 @@
+{"run_id": "41c4f9b5-63d2-49fc-b103-48c88092326f", "ts": "2026-01-28T23:54:33.550137Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "UNKNOWN"}}
+{"run_id": "41c4f9b5-63d2-49fc-b103-48c88092326f", "ts": "2026-01-28T23:54:36.349645Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "ask_clarification", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": false, "retrieval_query": "", "rationale": "No subject and no sender information provided. Assuming administrative category due to email body being blank."}}}
+{"run_id": "41c4f9b5-63d2-49fc-b103-48c88092326f", "ts": "2026-01-28T23:54:36.352626Z", "event": "node_start", "data": {"node": "stub_ask_clarification"}}
+{"run_id": "41c4f9b5-63d2-49fc-b103-48c88092326f", "ts": "2026-01-28T23:54:36.353031Z", "event": "node_end", "data": {"node": "stub_ask_clarification", "status": "ok"}}
+{"run_id": "41c4f9b5-63d2-49fc-b103-48c88092326f", "ts": "2026-01-28T23:54:36.354825Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "41c4f9b5-63d2-49fc-b103-48c88092326f", "ts": "2026-01-28T23:54:36.355193Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "clarification"}}

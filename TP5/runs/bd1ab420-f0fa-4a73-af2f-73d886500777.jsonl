@@ -1,0 +1,11 @@
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:45.196357Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E02"}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:49.129905Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité", "rationale": "La question de Yahia sur la validation des UE nécessite une consultation du règlement scolaire pour déterminer si les règles permettent de compiler avec une moyenne inférieure à 10/20."}}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:49.132889Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:49.952214Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "c82a85d6851e", "latency_ms": 818, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:49.954887Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:49.955869Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:55.172429Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:55.174915Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:55.175331Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:55.177920Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "bd1ab420-f0fa-4a73-af2f-73d886500777", "ts": "2026-01-28T23:55:55.178405Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

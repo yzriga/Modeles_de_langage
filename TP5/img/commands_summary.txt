@@ -1,0 +1,8 @@
+=== COMMANDES PRINCIPALES ===
+# Test d'un email spécifique
+python TP5/test_graph_minimal.py
+
+# Évaluation batch complète
+python -m TP5.run_batch
+Wrote TP5/batch_results.md
+Processed 11 emails

@@ -1,0 +1,28 @@
+=== RUN E01 (Attestation - Normal) ===
+Trajectory: classify_email -> maybe_retrieve -> draft_reply -> check_evidence -> finalize
+
+{
+    "run_id": "76de50c4-fa7a-4265-ba25-bb1f7763e706",
+    "ts": "2026-01-28T23:55:37.523301Z",
+    "event": "node_start",
+    "data": {
+        "node": "classify_email",
+        "email_id": "E01"
+    }
+}
+{
+    "run_id": "76de50c4-fa7a-4265-ba25-bb1f7763e706",
+    "ts": "2026-01-28T23:55:40.675600Z",
+    "event": "node_end",
+    "data": {
+        "node": "classify_email",
+        "status": "ok",
+        "decision": {
+            "intent": "reply",
+            "category": "admin",
+            "priority": 3,
+            "risk_level": "low",
+            "needs_retrieval": true,
+            "retrieval_query": "validation UE r\u00e8glement scolarit\u00e9",
+            "rationale": "La demande de Yahia Zriga concerne une question administrative n\u00e9cessitant consultation du corpus."
+        }

@@ -44,8 +44,36 @@ def parse_and_validate(raw: str) -> Decision:
 def classify_email(state: AgentState) -> AgentState:
     log_event(state.run_id, "node_start", {"node": "classify_email", "email_id": state.email_id})
 
+    # Budget step check
+    if not state.budget.can_step():
+        log_event(state.run_id, "node_end", {"node": "classify_email", "status": "budget_exceeded"})
+        return state
+
+    state.budget.steps_used += 1
+
     # Remplacement manuel pour éviter les problèmes avec les accolades JSON
     prompt = ROUTER_PROMPT.replace("{subject}", state.subject).replace("{sender}", state.sender).replace("{body}", state.body)
+    
+    # Détection heuristique de prompt injection
+    low = state.body.lower()
+    if any(x in low for x in ["ignore previous", "ignore toutes", "system:", "tool", "call", "exfiltrate"]):
+        state.decision = Decision(
+            intent="escalate",
+            category=state.decision.category,
+            priority=1,
+            risk_level="high",
+            needs_retrieval=False,
+            retrieval_query="",
+            rationale="Suspicion de prompt injection."
+        )
+        log_event(state.run_id, "node_end", {
+            "node": "classify_email",
+            "status": "ok",
+            "decision": state.decision.model_dump(),
+            "note": "injection_heuristic_triggered"
+        })
+        return state
+    
     raw = call_llm(prompt)
 
     try:

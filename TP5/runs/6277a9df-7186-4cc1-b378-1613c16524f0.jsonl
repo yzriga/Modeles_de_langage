@@ -1,0 +1,11 @@
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:56:57.324351Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "UNKNOWN"}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:00.169218Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "No Subject", "rationale": "Email sans sujet nécessite consultation du corpus pour déterminer la catégorie."}}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:00.172146Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:01.028849Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "4f52a3da5a25", "latency_ms": 856, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:01.032650Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:01.034755Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:06.999456Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:07.002026Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:07.002453Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:07.010765Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "6277a9df-7186-4cc1-b378-1613c16524f0", "ts": "2026-01-28T23:57:07.011132Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

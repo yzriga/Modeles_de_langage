@@ -38,3 +38,7 @@ if __name__ == "__main__":
         print(f"K: {out['retrieval_spec'].k}")
     else:
         print("No retrieval performed")
+
+    print("\n=== FINAL ===")
+    print("kind =", out["final_kind"])
+    print(out["final_text"])

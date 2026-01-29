@@ -1,0 +1,13 @@
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:44.502811Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:44.502974Z", "event": "node_end", "data": {"node": "draft_reply", "status": "safe_mode", "reason": "no_evidence"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:44.503053Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:44.503115Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": false, "last_draft_had_valid_citations": false, "retrieval_attempts": 1}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:44.503182Z", "event": "node_start", "data": {"node": "rewrite_query"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:45.414712Z", "event": "node_end", "data": {"node": "rewrite_query", "status": "ok", "q2": "France attestation scolaire étudiant logement"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:45.415319Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:46.288974Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "36fc17685386", "latency_ms": 873, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:46.289934Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:46.290049Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:50.504218Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:50.504769Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "0bdae83e-140f-4b79-980b-5945be5ab0ad", "ts": "2026-01-28T22:50:50.505145Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 2}}

@@ -1,0 +1,11 @@
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:29.514862Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E01"}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:32.398138Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation UE règlement scolarité", "rationale": "Question administrative nécessitant consultation du corpus."}}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:32.402068Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:33.260540Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "c82a85d6851e", "latency_ms": 857, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:33.261418Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:33.261983Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:36.832242Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:36.835277Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:36.835841Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:36.839046Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "d03108c0-2d8b-47ec-bd95-21ede5c9f27b", "ts": "2026-01-28T23:05:36.839814Z", "event": "node_end", "data": {"node": "finalize", "status": "ok", "final_kind": "reply"}}

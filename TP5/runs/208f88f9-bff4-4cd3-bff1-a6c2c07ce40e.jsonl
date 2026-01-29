@@ -1,0 +1,10 @@
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:21.029079Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "budget_test"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.602070Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "low", "needs_retrieval": true, "retrieval_query": "validation course units university regulations", "rationale": "Question regarding administrative course validation process."}}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.605815Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.606271Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "budget_exceeded"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.608785Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.609206Z", "event": "node_end", "data": {"node": "draft_reply", "status": "budget_exceeded"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.611538Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.611954Z", "event": "node_end", "data": {"node": "check_evidence", "status": "budget_exceeded"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.614375Z", "event": "node_start", "data": {"node": "finalize"}}
+{"run_id": "208f88f9-bff4-4cd3-bff1-a6c2c07ce40e", "ts": "2026-01-28T23:36:23.614732Z", "event": "node_end", "data": {"node": "finalize", "status": "budget_exceeded"}}

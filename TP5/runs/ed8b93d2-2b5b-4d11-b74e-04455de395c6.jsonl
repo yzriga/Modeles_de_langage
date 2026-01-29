@@ -1,0 +1,9 @@
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:24.960026Z", "event": "node_start", "data": {"node": "classify_email", "email_id": "E09"}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:27.853835Z", "event": "node_end", "data": {"node": "classify_email", "status": "ok", "decision": {"intent": "reply", "category": "admin", "priority": 3, "risk_level": "high", "needs_retrieval": true, "retrieval_query": "investigation possible attempt to compromise student data", "rationale": "Potentially malicious request for confidential information."}}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:27.857854Z", "event": "node_start", "data": {"node": "maybe_retrieve"}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:28.614121Z", "event": "tool_call", "data": {"tool": "rag_search", "args_hash": "6a1e5dd70780", "latency_ms": 755, "status": "ok", "k": 5, "n_docs": 5}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:28.615075Z", "event": "node_end", "data": {"node": "maybe_retrieve", "status": "ok", "n_docs": 5}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:28.615619Z", "event": "node_start", "data": {"node": "draft_reply"}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:33.517060Z", "event": "node_end", "data": {"node": "draft_reply", "status": "ok", "n_citations": 1}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:33.519392Z", "event": "node_start", "data": {"node": "check_evidence"}}
+{"run_id": "ed8b93d2-2b5b-4d11-b74e-04455de395c6", "ts": "2026-01-28T21:40:33.519847Z", "event": "node_end", "data": {"node": "check_evidence", "status": "ok", "evidence_ok": true, "last_draft_had_valid_citations": true, "retrieval_attempts": 1}}

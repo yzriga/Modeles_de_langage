@@ -71,8 +71,16 @@ class AgentState(BaseModel):
     retrieval_spec: Optional[RetrievalSpec] = None
     evidence: List[EvidenceDoc] = Field(default_factory=list)
 
+    # Nouveaux champs pour l'Exercice 8
+    evidence_ok: bool = False
+    last_draft_had_valid_citations: bool = False
+
     draft_v1: str = ""
     draft_v2: str = ""
+
+    # Nouveaux champs pour l'Exercice 9 - Sortie finale harmonisée
+    final_text: str = ""
+    final_kind: str = ""  # reply / clarification / handoff / ignore
 
     actions: List[Dict[str, Any]] = Field(default_factory=list)   # actions mockées
     errors: List[str] = Field(default_factory=list)

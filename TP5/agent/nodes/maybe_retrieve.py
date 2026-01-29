@@ -7,6 +7,13 @@ from TP5.agent.tools.rag_tool import rag_search_tool
 def maybe_retrieve(state: AgentState) -> AgentState:
     log_event(state.run_id, "node_start", {"node": "maybe_retrieve"})
 
+    # Budget step check
+    if not state.budget.can_step():
+        log_event(state.run_id, "node_end", {"node": "maybe_retrieve", "status": "budget_exceeded"})
+        return state
+
+    state.budget.steps_used += 1
+
     if not state.decision.needs_retrieval:
         log_event(state.run_id, "node_end", {"node": "maybe_retrieve", "status": "skipped"})
         return state
